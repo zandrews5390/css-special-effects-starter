@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>CSS Special Effects</title>
+        <meta name="author" content="Jessica Barnett">
+        <meta name="description" content="Syntax and examples of special effect that we can create with CSS to add design details to our pages.">
+
+        <!-- Favicon -->
+        <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+        <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+
+        <!-- Google Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Martel+Sans:wght@400;600;900&family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+        <!-- Stylesheets -->
+        <link href="styles.css" rel="stylesheet">
+    </head>
+
+    <body id="top">
+        <a href="#main" id="skip">Skip to Main Content</a>
+        <header>
+            <h1>CSS Special Effects</h1>
+        </header>
+
+        <main id="main">
+            <!-- 
+                Topics:
+                    - text shadows
+                    - box shadows
+                    - rounded corners
+                    - border images
+                    - linear gradients
+                    - radial gradients
+                    - positioning radial gradients
+                    - vendor prefixes
+                    - filters (bonus info, not in zyBook)
+            -->
+
+            <section id="text">
+                <h2>Text Shadows</h2>
+                <p>A <code>text-shadow</code> can be added to text with three or four values set. The value that is not required is the blur amount. You can also add more than one text shadow to an element by adding multiple shadows separated by commas when adding to CSS. Be careful with a text shadow, as they can hurt readability.</p>
+                <pre>
+                    <code>
+<!--                 -->text-shadow: offset-x offset-y blur-radius color;
+                    </code>
+                </pre>
+                <div>
+                    <span class="text-shadow-1">Text Shadows</span>
+                    <span class="text-shadow-2">Text Shadows</span>
+                    <span class="text-shadow-3">Text Shadows</span>
+                    <span class="text-shadow-4">Text Shadows</span>
+                </div>
+            </section>
+
+            <section id="box">
+                <h2>Box Shadows</h2>
+                <p>Box shadows can add a lot of detail to a page. For elements with a hover state, a shadow can be adjusted in size and spread to make the element look like it is getting closer to the page behind it. You can also use multiple shadows to create other effects by separating them with a comma. The box shadow will respect the shape of an element with a border radius. At a minimum, a <code>box-shadow</code> requires two values, which will be used as the x offset and y offset.</p>
+                <pre>
+                    <code>
+<!--                 -->box-shadow: offset-x offset-y blur-radius spread-radius color;
+                    </code>
+                </pre>            
+                <div id="shadows">
+                    <div class="shadow1"><span>1</span></div>   
+                    <div class="shadow2"><span>2</span></div>   
+                    <div class="shadow3"><span>3</span></div>   
+                    <div class="shadow4"><span>4</span></div> 
+                </div> 
+            </section>
+
+            <section id="corners">
+                <h2>Rounded Corners</h2>
+                <p>A <code>border-radius</code> can be used to round some or all of the corners on an element. These can be left rounded, or the rounding can change on an action like hover. When you want to create a circle, remember that as long as your element is square, a 50% border radius will turn it into a circle.</p>
+                <pre>
+                    <code>
+<!--                 -->border-radius: 10px;                /* all four corners the same */
+<!--                 -->border-radius: 10px 20px;           /* top-left/bottom-right top-right/bottom-left */
+<!--                 -->border-radius: 10px 20px 15px;      /* top-left top-right/bottom-left bottom-right */
+<!--                 -->border-radius: 10px 5px 15px 20px;  /* top-left top-right bottom-right bottom-left */
+                    </code>
+                </pre>     
+                <div id="radius">
+                    <div class="corner1"><span>1</span></div>   
+                    <div class="corner2"><span>2</span></div>   
+                    <div class="corner3"><span>3</span></div>   
+                    <div class="corner4"><span>4</span></div> 
+                </div>  
+            </section>
+
+            <section id="image-brdr">
+                <h2>Border Images</h2>
+                <p>An image can be added as a border to an element, but there are special considerations to this. These images need to have sides that can easily be repeated and sliced or stretched without becoming distorted.</p>
+                <pre>
+                    <code>
+<!--                 -->border-image: source slice width outset repeat;
+                    </code>
+                </pre>
+                <div>
+                    <!-- 
+                        Photo by <a href="https://unsplash.com/@alexeydemidov?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Alexey Demidov</a> on <a href="https://unsplash.com/photos/a-body-of-water-with-blue-sky-and-clouds-dbUyVKF0izk?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
+                    -->
+                    <img src="images/ocean.jpg" alt="" width="640" height="400" class="border-img1">
+                    <!-- 
+                        Photo by <a href="https://unsplash.com/@lucabravo?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Luca Bravo</a> on <a href="https://unsplash.com/photos/blue-sky-with-white-clouds-g_LG9LGyTk8?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
+                    -->
+                    <img src="images/moon.jpg" alt="" width="640" height="400" class="border-img2">
+                </div>
+            </section>
+
+            <section id="l-gradient">
+                <h2>Linear Gradients</h2>
+                <p>In web design, <code>linear-gradients</code> can be used in many ways. These can add a background to an element or page, can be used to create CSS art, or can be used to make elements appear to shine. They can show a transition from one color to another, or can include multiple colors and transition between all of them.</p>
+                <pre>
+                    <code>
+<!--                 -->/* A gradient tilted 45 degrees, starting blue and finishing red */
+
+<!--                 -->linear-gradient(45deg, blue, red)
+                    </code>
+                </pre>                
+                <div id="linear">
+                    <div class="linear1"><span>1</span></div>
+                    <div class="linear2"><span>2</span></div>
+                    <div class="linear3"><span>3</span></div>
+                    <div class="linear4"><span>4</span></div>
+                </div>
+            </section>
+
+            <section id="r-gradient">
+                <h2>Radial Gradients</h2>
+                <p></p>
+                <pre>
+                    <code>
+<!--                 -->/* A gradient at the center of its container, starting red, changing to blue, and finishing green */
+
+<!--                 -->radial-gradient(circle at center, red 0, blue, green 100%)
+                    </code>
+                </pre>        
+                <div id="radial">
+                    <div class="radial1"><span>1</span></div>
+                    <div class="radial2"><span>2</span></div>
+                    <div class="radial3"><span>3</span></div>
+                    <div class="radial4"><span>4</span></div>
+                </div>        
+            </section>
+
+            <section id="filter">
+                <h2>Filters</h2>
+                <p></p>
+                <pre>
+                    <code>
+<!--                 -->/* <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/filter" target="_blank">Find more filter settings on MDN</a> */                        
+<!--                 -->filter: drop-shadow: 0 0 0.25rem var(--med-gray);
+<!--                 -->filter: grayscale(50%);
+                    </code>
+                </pre>       
+                <!-- 
+                    Photo by <a href="https://unsplash.com/@seanstratton?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Sean Stratton</a> on <a href="https://unsplash.com/photos/mountain-at-daytime-jLB_0YS5WBc?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
+                -->
+                <div>
+                    <figure>
+                        <img src="images/mountains.jpg" alt="" width="640" height="426">
+                        <figcaption>No filter</figcaption>
+                    </figure>
+                    <figure>
+                        <img src="images/mountains.jpg" alt="" width="640" height="426" class="filter1">
+                        <figcaption>Opacity</figcaption>
+                    </figure>
+                    <figure>
+                        <img src="images/mountains.jpg" alt="" width="640" height="426" class="filter2">
+                        <figcaption>Sepia</figcaption>
+                    </figure>
+                    <figure>
+                        <img src="images/mountains.jpg" alt="" width="640" height="426" class="filter3">
+                        <figcaption>Blur</figcaption>
+                    </figure>
+                    <figure>
+                        <img src="images/mountains.jpg" alt="" width="640" height="426" class="filter4">
+                        <figcaption>Saturate</figcaption>
+                    </figure>
+                    <figure>
+                        <img src="images/filter.svg" alt="" width="640" height="640" class="filter5">
+                        <figcaption>Drop Shadow</figcaption>
+                    </figure>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>Copyright &copy; <span>2024</span> - Jessica Barnett</p>
+        </footer>
+    </body>
+</html>
