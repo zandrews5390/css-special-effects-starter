@@ -259,14 +259,12 @@ img{
     text-shadow: -1px 1px var(--lt-blue), -4px 4px 6px var(--greige);
 }
 
-/* TO DO: Add a text shadow here that has a six pixel offset for both x and y, includes a six pixel blur and uses the tan CSS variable color */
 .text-shadow-3{
-    
+    text-shadow: 6px 6px 6px var(--tan);
 }
 
-/* TO DO: Add a text shadow here that has a one pixel offset in the x and y direction, no spread or blur, and uses the light blue variable color */
 .text-shadow-4{
-    
+    text-shadow: 1px 1px 0 var(--lt-blue);
 }
 
 /* Box Shadow Section Styles */
@@ -275,9 +273,8 @@ img{
     box-shadow: -6px 6px 10px 10px var(--dk-gray);
 }
 
-/* TO DO: Add a box shadow to this element with a three pixel offset in the x and y direction, no spread or blur, that uses the tan CSS variable color */
 .shadow2{
-    
+    box-shadow: 3px 3px 0 0 var(--tan);
 }
 
 /* This is included as an example and has been completed for you */
@@ -286,31 +283,26 @@ img{
     box-shadow: 6px 6px var(--dk-blue), -6px -6px var(--med-gray);
 }
 
-/* TO DO: Add a box shadow here that uses zero as the x-offset, y-offset, and blur, has a 6 pixel spread and uses the dark blue variable color, then add a second box shadow to the list that uses the same values for its first three settings, has a twelve pixel spread, and uses the medium gray CSS color variable */
 .shadow4{
     border-radius: 50%;
-    
+    box-shadow: 0 0 0 6px var(--dk-blue), 0 0 0 12px var(--med-gray);
 }
 
 /* Border Radius Section Styles */
-/* TO DO: Add a ten pixel border radius to all sides of this element */
 .corner1{
-    
+    border-radius: 10px;  
 }
 
-/* TO DO: Add a ten pixel border radius to the top left and bottom right corners, and a twenty pixel border radius to the top right and bottom left corners of this element */
 .corner2{
-    
+    border-radius: 10px 20px;
 }
 
-/* TO DO: Add a ten pixel border radius to the top left corner, a twenty pixel border radius to the top right and bottom left corners, and a fifteen pixel border radius to the bottom right corner */
 .corner3{
-    
+    border-radius: 10px 20px 15px;
 }
 
-/* TO DO: Add the following border radius settings to each of the four corners of this element, starting with the upper-left hand corner and moving clockwise: ten pixels, five pixels, fifteen pixels, and twenty pixels */
 .corner4{
-    
+    border-radius: 10px 5px 15px 20px;
 }
 
 /* Border Image Section Styles */
@@ -327,11 +319,15 @@ img{
     border-image: url(images/frame-1.png) 250 200 250 200 stretch stretch;
 }
 
-/* TO DO: Add a border image that uses the "frame-2" image, followed by the values 250 200 250 200 stretch stretch. The border width property should also be set to the following: 40px 32px 40px 32px. You should also include the vendor prefixes and settings, using the example above to help */
 .border-img2{
     width: calc(100% - 90px);
     max-width: calc(640px - 90px);
     border-style: solid;
+    border-width: 40px 32px 40px 32px;
+    -moz-border-image: url(images/frame-2.png) 250 200 250 200 stretch stretch;
+    -webkit-border-image: url(images/frame-2.png) 250 200 250 200 stretch stretch;
+    -o-border-image: url(images/frame-2.png) 250 200 250 200 stretch stretch;
+    border-image: url(images/frame-2.png) 250 200 250 200 stretch stretch;
 }
 
 /* Linear Gradient Section Styles */
@@ -412,29 +408,24 @@ figcaption{
     font-size: 1.5rem;
 }
 
-/* TO DO: Add a filter that sets the opacity of this image to 50 percent */
 .filter1{
-    
+    filter: opacity(50%);
 }
 
-/* TO DO: Add a filter that adds sepia tone to this image using 80% as the amount to add */
 .filter2{
-    
+    filter: sepia(80%);
 }
 
-/* TO DO: Add a filter that blurs this image by five pixels */
 .filter3{
-    
+    filter: blur(5px);
 }
 
-/* TO DO: Add a filter here to increase saturation by 200% */
 .filter4{
-    
+    filter: saturate(200%);
 }
 
-/* TO DO: Add a filter here to add a drop shadow to this element with a negative three pixel x offset, a 3 pixel y offset, five pixels of blur, and uses the medium gray CSS variable */
 .filter5{
-    
+    filter: drop-shadow(-3px 3px 5px var(--med-gray));
     max-height: 400px;
 }
 
